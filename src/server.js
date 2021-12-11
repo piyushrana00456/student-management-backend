@@ -10,6 +10,7 @@ const contestController = require("./Controllers/contest.controller");
 app.use(cors());
 
 app.use("/student", studentController);
+app.use("/student/:id", studentController);
 app.use("/contest", contestController);
 app.use("/admin-signup", register);
 app.use("/admin-signup", get);

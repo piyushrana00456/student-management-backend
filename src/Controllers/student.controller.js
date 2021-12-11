@@ -20,4 +20,13 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    let user = await Student.findByIdAndDelete(req.params.id);
+    return res.status(201).json({ data: user });
+  } catch (error) {
+    return res.status(400).json({ message: error });
+  }
+});
+
 module.exports = router;
